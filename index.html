@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="app-title">
+      <section class="todo-card" aria-label="Список задач">
+        <header class="todo-card__header">
+          <h1 id="app-title" class="todo-card__title">To-Do List</h1>
+          <p class="todo-card__subtitle">Организуйте задачи на сегодня</p>
+        </header>
+
+        <form class="todo-form" id="todo-form" novalidate>
+          <label class="sr-only" for="todo-input">Новая задача</label>
+          <input
+            id="todo-input"
+            class="todo-form__input"
+            type="text"
+            maxlength="120"
+            placeholder="Добавить задачу..."
+            autocomplete="off"
+          />
+          <button class="todo-form__button" type="submit">Добавить</button>
+        </form>
+        <p id="form-error" class="form-error" aria-live="polite"></p>
+
+        <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+
+        <footer class="todo-footer">
+          <span class="todo-footer__count" id="items-left">0 задач осталось</span>
+
+          <nav class="todo-footer__filters" aria-label="Фильтрация задач">
+            <button class="filter-btn is-active" data-filter="all" type="button">Все</button>
+            <button class="filter-btn" data-filter="active" type="button">Активные</button>
+            <button class="filter-btn" data-filter="completed" type="button">Выполненные</button>
+          </nav>
+
+          <button class="clear-btn" id="clear-completed" type="button">Очистить выполненные</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
